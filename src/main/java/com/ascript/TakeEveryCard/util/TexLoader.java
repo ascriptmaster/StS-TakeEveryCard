@@ -1,5 +1,6 @@
-package LaunchPad.util;
+package com.ascript.TakeEveryCard.util;
 
+import com.ascript.TakeEveryCard.TakeEveryCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -8,8 +9,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 
 import java.util.HashMap;
-
-import static LaunchPad.LaunchPad.makeImagePath;
 
 public class TexLoader {
     private static HashMap<String, Texture> textures = new HashMap<>();
@@ -24,7 +23,7 @@ public class TexLoader {
             try {
                 loadTexture(textureString, true);
             } catch (GdxRuntimeException e) {
-                return getTexture(makeImagePath("ui/missing.png"));
+                return getTexture(TakeEveryCard.makeImagePath("ui/missing.png"));
             }
         }
         return textures.get(textureString);
