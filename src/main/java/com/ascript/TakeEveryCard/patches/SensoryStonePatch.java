@@ -11,7 +11,7 @@ public class SensoryStonePatch {
     public static void Prefix(int num) {
         float interval = 1f + num;
         for (int i = 1; i <= num; i++) {
-            RewardHelper.nextYOffset.add(i / interval);
+            RewardHelper.nextYOffset.push(i / interval);
         }
     }
 }

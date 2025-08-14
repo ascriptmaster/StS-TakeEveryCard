@@ -11,7 +11,7 @@ public class OrreryPatch {
     public static void Prefix() {
         // Prepare for 5 rewards.
         for (int i = 1; i <= 5; i++) {
-            RewardHelper.nextYOffset.add(i/6.0f);
+            RewardHelper.nextYOffset.push(i/6.0f);
         }
     }
 }

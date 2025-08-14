@@ -7,17 +7,17 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.Deque;
 
 public class RewardHelper {
-    public static Queue<Float> nextYOffset = new LinkedList<>();
+    public static Deque<Float> nextYOffset = new LinkedList<>();
 
     public static void obtainCards(List<AbstractCard> cards) {
         float xInterval = Settings.WIDTH / (1.0f + cards.size());
         int xOffset = 1;
         float yOffset = 0.5f;
         if (RewardHelper.nextYOffset.size() > 0) {
-            yOffset = RewardHelper.nextYOffset.remove();
+            yOffset = RewardHelper.nextYOffset.pop();
         }
         for (AbstractCard card : cards) {
             AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(card, xOffset * xInterval, yOffset * Settings.HEIGHT));
